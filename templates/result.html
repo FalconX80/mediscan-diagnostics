@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card mt-4">
+    <div class="card-header">
+        <h1>{{ organ|capitalize }} - {{ disease|capitalize }} Scan Result</h1>
+    </div>
+    <div class="card-body">
+        <p>{{ prediction }}</p>
+        {% if suggestions %}
+        <h5>Suggested Actions and Advice:</h5>
+        <ul>
+            {% for suggestion in suggestions %}
+            <li>{{ suggestion }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <a href="{{ url_for('organ', organ_name=organ, disease=disease) }}" class="btn btn-secondary">Go back</a>
+    </div>
+</div>
+{% endblock %}

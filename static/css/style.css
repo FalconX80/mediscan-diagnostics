@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.sidebar {
+    padding: 20px;
+    height: 100vh;
+    position: fixed;
+}
+
+.sidebar h2 {
+    text-align: center;
+}
+
+.sidebar .nav-link {
+    color: #007bff;
+}
+
+.sidebar .nav-link:hover {
+    text-decoration: none;
+    color: #0056b3;
+}
+
+.content {
+    margin-left: 220px;
+    padding: 20px;
+}
+
+.jumbotron {
+    margin-top: 20px;
+}
+
+.card {
+    margin-top: 20px;
+}

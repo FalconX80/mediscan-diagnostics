@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediScan Diagnostics</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            background-color: #F5F5F5;
+        }
+        .navbar {
+            background-color: #4CAF50;
+        }
+        .navbar-brand {
+            color: #FFFFFF !important;
+        }
+        .sidebar {
+            background-color: #FFFFFF;
+            border-right: 1px solid #DDDDDD;
+        }
+        .sidebar h2 {
+            color: #4CAF50;
+        }
+        .sidebar .nav-link {
+            color: #4CAF50;
+        }
+        .sidebar .nav-link:hover {
+            color: #212529;
+        }
+        .content {
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+            background-color: #4CAF50;
+            border-color: #4CAF50;
+        }
+        .btn-primary:hover {
+            background-color: #388E3C;
+            border-color: #388E3C;
+        }
+        .btn-secondary {
+            background-color: #FFC107;
+            border-color: #FFC107;
+        }
+        .btn-secondary:hover {
+            background-color: #FFA000;
+            border-color: #FFA000;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">MediScan Diagnostics</a>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 sidebar">
+                <h2>Organs</h2>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('organ', organ_name='lungs', disease='pneumonia') }}">Lungs - Pneumonia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('organ', organ_name='lungs', disease='cancer') }}">Lungs - Cancer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('organ', organ_name='brain', disease='tumor') }}">Brain - Tumor</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('organ', organ_name='colon', disease='cancer') }}">Colon - Cancer</a>
+                    </li>
+                    <!-- Add more organs and diseases as needed -->
+                </ul>
+            </div>
+            <div class="col-md-10 content">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
